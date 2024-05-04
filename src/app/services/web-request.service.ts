@@ -9,7 +9,7 @@ export class WebRequestService {
   readonly ROOT_URL;
 
   constructor(private http: HttpClient) {
-    this.ROOT_URL = 'http://localhost/api';
+    this.ROOT_URL = 'https://symfony-app-fa8aab84dac3.herokuapp.com/api';
   }
 
   get(uri: string) {

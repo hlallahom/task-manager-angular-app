@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "task-manager-angular-app"
+  },
+  "targets": {
+    "project-name": {
+      "hosting": {
+        "production": [
+          "task-manager-angular-app"
+        ]
+      }
+    }
+  }
+}

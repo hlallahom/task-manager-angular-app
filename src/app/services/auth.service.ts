@@ -9,7 +9,11 @@ import { shareReplay, tap, map } from 'rxjs/operators';
 })
 export class AuthService {
 
-  constructor(private webService: WebRequestService, private router: Router, private http: HttpClient) { }
+  private isloggedIn: boolean;
+
+  constructor(private webService: WebRequestService, private router: Router, private http: HttpClient) {
+    this.isloggedIn=false;
+  }
   
   // Fonction de connexion de l'utilisateur
   login(username: string, password: string) {
@@ -26,7 +30,7 @@ export class AuthService {
           console.error('Access Token is missing in the response body.');
         }
 
-      console.log('LOGGED IN!');
+        this.isloggedIn=true;
       })
     );
   }
@@ -40,7 +44,7 @@ export class AuthService {
         const accessToken = res.body?.token;
         // Les jetons d'authentification seront dans l'en-tête de cette réponse
         this.setAccessToken(accessToken);
-        console.log("Successfully signed up and now logged in!");
+        this.isloggedIn=true;
       })
     )
   }
@@ -48,6 +52,7 @@ export class AuthService {
   // Fonction de déconnexion de l'utilisateur
   logout() {
     this.removeSession();
+    this.isloggedIn=false;
     this.router.navigate(['/login']);
   }
 
@@ -98,6 +103,10 @@ getNewAccessToken() {
         this.setAccessToken(accessToken);
       })
    )
+  }
+
+  isLoggedIn(): boolean {
+    return this.isloggedIn;
   }
 
 }

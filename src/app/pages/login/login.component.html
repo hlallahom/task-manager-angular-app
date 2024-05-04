@@ -1,7 +1,7 @@
 <div class="centered-content">
   <div class="white-box">
 
-    <h1 class="title mb-3">Connexion</h1>
+    <h1 class="title mb-3">Login</h1>
 
     <form>
 
@@ -18,18 +18,16 @@
           <span class="input-group-text">
             <i class="fas fa-lock"></i>
           </span>
-          <input name="password" type="password" class="form-control" [(ngModel)]="password" placeholder="Mot de passe">
+          <input name="password" type="password" class="form-control" [(ngModel)]="password" placeholder="Password">
         </div>
       </div>
       <div class="d-flex justify-content-end">
-        <button class=" btn text-white" (click)="onLoginButtonClick()">Connexion</button>
+        <button class=" btn text-white" (click)="onLoginButtonClick()">Login</button>
       </div>
     </form>
     <br>
 
-    <p class="has-text-grey">Vous n'avez pas de compte ? <a routerLink="/register">S'inscrire</a>
-      <br>ou<br>
-      - email : <strong>demo&#64;demo.com</strong> <br>- mot de passe : <strong>password</strong>
+    <p class="has-text-grey">have you an account ? <a routerLink="/register">Register</a>
     </p>
 
   </div>

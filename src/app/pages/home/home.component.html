@@ -4,19 +4,20 @@
 
     <div class="sidebar bg-white">
         <h1 class="title">
-          Liste
+          Tasks List
         </h1>
 
 
     <div class="list-menu">
         <a class="list-menu-item" *ngFor="let list of liste" [routerLink]="['/liste', list.id]" routerLinkActive="is-active" >
             <p>{{ list.titre }}</p>
+            <p>Developed By <a href="https://github.com/hlallahom/" blank="_target">Hamdi LALLAHOM [hlallahom]</a></p>
         </a>
   
 
     </div>
 
-    <button class="btn text-white" routerLink="/new-list" ><i class="fa-solid fa-plus"></i> Nouvelle liste</button>
+    <button class="btn text-white" routerLink="/new-list" ><i class="fa-solid fa-plus"></i> New Tasks List</button>
 
     </div>
 
@@ -24,7 +25,7 @@
       <div *ngIf="tache">
         <div class="d-flex justify-content-between mb-3">
           <h1 class="title">
-              Tâches
+              Tasks
           </h1>
           <div class="dropdown" ngbDropdown #myDropdown="ngbDropdown" (mouseenter)="myDropdown.open()">
             <button class="btn" id="dropdownMenuButton" ngbDropdownToggle aria-haspopup="true" aria-expanded="false">
@@ -32,10 +33,10 @@
             </button>
             <div ngbDropdownMenu aria-labelledby="dropdownMenuButton">
               <a [routerLink]="['/edit-list', selectedListId]" class="dropdown-item">
-                <p>Modifier</p>
+                <p>Update</p>
               </a>
               <a (click)="onDeleteListClick()" class="dropdown-item text-danger">
-                <p>Supprimer</p>
+                <p>Delete</p>
               </a>
             
             </div>
@@ -56,7 +57,7 @@
       </div>
       </div>
 
-      <h3 class="empty-state-text mt-5" *ngIf="tache.length === 0"> Cliquez sur le bouton <i class="fa-solid fa-plus" style="color:black"></i> pour créer une nouvelle tâche.</h3>
+      <h3 class="empty-state-text mt-5" *ngIf="tache.length === 0"> Click Button <i class="fa-solid fa-plus" style="color:black"></i> to create new task.</h3>
 
       <button routerLink="./new-task" class="circle-add-button btn">
         <i class="fa-solid fa-plus fa-2xl"></i>
@@ -64,7 +65,7 @@
     </div>
 
     <div *ngIf="!tache">
-      <h3 class="empty-state-text">Sélectionnez une liste dans la barre latérale</h3>
+      <h3 class="empty-state-text">Select a list</h3>
     </div>
 
   </div>

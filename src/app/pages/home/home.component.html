@@ -11,7 +11,6 @@
     <div class="list-menu">
         <a class="list-menu-item" *ngFor="let list of liste" [routerLink]="['/liste', list.id]" routerLinkActive="is-active" >
             <p>{{ list.titre }}</p>
-            <p>Developed By <a href="https://github.com/hlallahom/" blank="_target">Hamdi LALLAHOM [hlallahom]</a></p>
         </a>
   
 
@@ -63,7 +62,7 @@
         <i class="fa-solid fa-plus fa-2xl"></i>
       </button>
     </div>
-
+    <p>Developed By <a href="https://github.com/hlallahom/" blank="_target">Hamdi LALLAHOM [hlallahom]</a></p>
     <div *ngIf="!tache">
       <h3 class="empty-state-text">Select a list</h3>
     </div>

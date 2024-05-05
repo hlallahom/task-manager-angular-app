@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Tache } from '../../models/tache.models';
 import { TacheService } from '../../services/tache.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-home',

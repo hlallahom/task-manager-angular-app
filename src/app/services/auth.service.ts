@@ -26,11 +26,11 @@ export class AuthService {
 
         if (accessToken) {
           this.setSession( accessToken, refreshToken);
+          this.isloggedIn=true;
         } else {
           console.error('Access Token is missing in the response body.');
+          this.isloggedIn=false;
         }
-
-        this.isloggedIn=true;
       })
     );
   }
@@ -90,7 +90,7 @@ export class AuthService {
  // Fonction pour obtenir un nouveau jeton d'accès à partir du jeton de rafraîchissement
 getNewAccessToken() {
   const refreshToken = this.getRefreshToken() ?? '';
-  
+  this.isloggedIn=true;
   return this.http.get(`${this.webService.ROOT_URL}/token`, {
       headers: {
       'x-refresh-token': refreshToken,

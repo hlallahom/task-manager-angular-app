@@ -11,8 +11,8 @@ export class AppComponent {
   title = 'client';
 
   constructor(authService: AuthService, router: Router) {
-    if (authService.isLoggedIn()) {
+    /*if (!authService.isLoggedIn()) {
       router.navigate(['login']);
-    }
+    }*/
   }
 }

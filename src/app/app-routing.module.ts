@@ -9,7 +9,7 @@ import { EditListComponent } from './component/edit-list/edit-list.component';
 import { EditTacheComponent } from './component/edit-tache/edit-tache.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'new-list', component: NewListComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
